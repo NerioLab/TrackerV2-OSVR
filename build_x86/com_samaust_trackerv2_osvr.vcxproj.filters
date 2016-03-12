@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\GitHub_repos\TrackerV2-OSVR\Tracker-OSVR\com_samaust_trackerv2_osvr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GitHub_repos\TrackerV2-OSVR\Tracker-OSVR\trackir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\GitHub_repos\TrackerV2-OSVR\build_x86\com_samaust_trackerv2_osvr_json.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GitHub_repos\TrackerV2-OSVR\Tracker-OSVR\trackir.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\GitHub_repos\TrackerV2-OSVR\Tracker-OSVR\CMakeLists.txt" />
+    <CustomBuild Include="C:\GitHub_repos\TrackerV2-OSVR\Tracker-OSVR\com_samaust_trackerv2_osvr.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6D00CBE5-4FF5-3B20-A143-CC7B615C9CDD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{64C019B8-1BC2-3A2F-B958-BDC931AB3D90}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

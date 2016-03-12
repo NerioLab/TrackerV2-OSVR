@@ -1,0 +1,3 @@
+C:/GitHub_repos/TrackerV2-OSVR/build_x64/CMakeFiles/com_samaust_trackerv2_osvr.dir
+C:/GitHub_repos/TrackerV2-OSVR/build_x64/CMakeFiles/ALL_BUILD.dir
+C:/GitHub_repos/TrackerV2-OSVR/build_x64/CMakeFiles/ZERO_CHECK.dir

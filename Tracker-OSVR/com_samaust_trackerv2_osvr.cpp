@@ -47,10 +47,17 @@ class HardwareDetection {
 			// At this point the Camera SDK is actively looking for all connected cameras and will initialize
 			// them on it's own.
 
-			Sleep(3000); // Some delay is necessary to initialize the camera
-			
-			// Get a connected camera
-			CameraLibrary::Camera *camera = CameraLibrary::CameraManager::X().GetCamera();
+			// Some delay is necessary to initialize the camera
+			// Try to detect camera for at most three seconds
+			CameraLibrary::Camera *camera;
+			for (int i = 0; i < 30; i++)
+			{
+				// Get a connected camera
+				camera = CameraLibrary::CameraManager::X().GetCamera();
+				if (camera != 0)
+					break;
+				Sleep(100);
+			}
 
 			if (camera == 0)
 			{

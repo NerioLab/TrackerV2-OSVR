@@ -121,8 +121,15 @@ OSVR_ReturnCode trackir::update() {
 	if (frame)
 	{
 		m_vec->BeginFrame();
+		int frameObjectCount = frame->ObjectCount();
 
-		for (int i = 0; i<frame->ObjectCount(); i++)
+		// Light green LED if TracClip PRO is detected
+		if (frameObjectCount >= 3)
+			m_camera->SetLED(CameraLibrary::eStatusLEDs::GreenStatusLED, true);
+		else
+			m_camera->SetLED(CameraLibrary::eStatusLEDs::GreenStatusLED, false);
+
+		for (int i = 0; i<frameObjectCount; i++)
 		{
 			CameraLibrary::cObject *obj = frame->Object(i);
 

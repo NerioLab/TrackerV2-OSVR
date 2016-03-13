@@ -35,6 +35,8 @@ class trackir
 		CameraLibrary::Camera *m_camera;
 		Core::DistortionModel m_lensDistortion;
 
+		bool m_vectorDetected;
+
 		// Position and orientation returned to game
 		double m_x, m_y, m_z;
 		double m_yaw, m_pitch, m_roll;

@@ -87,6 +87,8 @@ trackir::trackir(OSVR_PluginRegContext ctx, CameraLibrary::Camera *camera)
 	// Turn off TrackIR illumination LEDs (not necessary for TrackClip PRO)
 	m_camera->SetLED(CameraLibrary::eStatusLEDs::IlluminationLED, false);
 
+	m_vectorDetected = false;
+
 	std::cout << "[TrackerV2-OSVR] TrackIR initialized" << std::endl;
 
 	// Create the initialization options
@@ -124,10 +126,12 @@ OSVR_ReturnCode trackir::update() {
 		int frameObjectCount = frame->ObjectCount();
 
 		// Light green LED if TracClip PRO is detected
-		if (frameObjectCount >= 3)
-			m_camera->SetLED(CameraLibrary::eStatusLEDs::GreenStatusLED, true);
-		else
-			m_camera->SetLED(CameraLibrary::eStatusLEDs::GreenStatusLED, false);
+		bool vectorDetected = (frameObjectCount >= 3);
+		if (m_vectorDetected != vectorDetected)
+		{
+			m_vectorDetected = vectorDetected;
+			m_camera->SetLED(CameraLibrary::eStatusLEDs::GreenStatusLED, m_vectorDetected);
+		}
 
 		for (int i = 0; i<frameObjectCount; i++)
 		{

@@ -20,3 +20,22 @@ Recenter : CTRL + F12
 ## Notes
 
 There are currently no settings to scale the positions and orientations.
+TrackClip PRO support is hardcoded. A future version will let the user choose between the Vector Clip and TrackClip PRO
+
+## How to compile
+
+The provided solutions are for Visual Studio 2013. You can generate new solutions for other compilers using CMake : 
+
+* Set the source folder to Tracker-OSVR
+* Set the build folder
+* Add entry CMAKE_PREFIX_PATH and set it to the OSVR-Core Binary Snapshot folder
+* Configure and generate
+
+To compile:
+
+* Download and extract an OSVR-Core Binary Snapshot.
+* Modify the additional include directory project property to point to the OSVR-Core Binary Snapshot folder.
+* Download the OptiTrack SDK and install it. It will automatically set the NP_CAMERASDK environment variable to point to the SDK install folder. The project settings use that environment variable to find the Camera SDK include and library files.
+* Get a copy of boost and modify the additional include directory project property. I installed boost using OSVR-Boxstarter but if you don't need to setup a whole development environment, you can directly download it from its official website.
+* Modify the additional include directory project property of the build folder.
+* Compile

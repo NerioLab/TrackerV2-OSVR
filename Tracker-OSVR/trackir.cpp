@@ -84,6 +84,9 @@ trackir::trackir(OSVR_PluginRegContext ctx, CameraLibrary::Camera *camera)
 
 	m_vec->SetSettings(vectorSettings);
 
+	// Turn off TrackIR illumination LEDs (not necessary for TrackClip PRO)
+	m_camera->SetLED(CameraLibrary::eStatusLEDs::IlluminationLED, false);
+
 	std::cout << "[TrackerV2-OSVR] TrackIR initialized" << std::endl;
 
 	// Create the initialization options

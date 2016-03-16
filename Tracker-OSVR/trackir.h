@@ -36,6 +36,7 @@ class trackir
 		Core::DistortionModel m_lensDistortion;
 
 		bool m_vectorDetected;
+		int m_frameCount;
 
 		// Position and orientation returned to game
 		double m_x, m_y, m_z;

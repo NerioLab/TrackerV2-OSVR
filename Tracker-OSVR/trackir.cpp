@@ -88,6 +88,7 @@ trackir::trackir(OSVR_PluginRegContext ctx, CameraLibrary::Camera *camera)
 	m_camera->SetLED(CameraLibrary::eStatusLEDs::IlluminationLED, false);
 
 	m_vectorDetected = false;
+	m_frameCount = 0;
 
 	std::cout << "[TrackerV2-OSVR] TrackIR initialized" << std::endl;
 
@@ -153,6 +154,12 @@ OSVR_ReturnCode trackir::update() {
 			if (GetAsyncKeyState(VK_F12) & 0x8000)
 				m_vecprocessor->Recenter();
 		}
+
+		if (m_frameCount < 10)
+			m_frameCount++;	
+
+		if (m_frameCount == 9)
+			m_vecprocessor->Recenter();
 
 		// Get position and orientation
 		m_vecprocessor->GetPosition(m_x, m_y, m_z);

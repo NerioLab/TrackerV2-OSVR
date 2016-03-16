@@ -166,10 +166,10 @@ OSVR_ReturnCode trackir::update() {
 	// Source : http://www.euclideanspace.com/maths/geometry/rotations/conversions/eulerToQuaternion/
 	double c1 = cos(m_yaw * DEGTORADDIV2);
 	double s1 = sin(m_yaw * DEGTORADDIV2);
-	double c2 = cos(m_pitch * DEGTORADDIV2);
-	double s2 = sin(m_pitch * DEGTORADDIV2);
-	double c3 = cos(-m_roll * DEGTORADDIV2);
-	double s3 = sin(-m_roll * DEGTORADDIV2);
+	double c2 = cos(m_roll* DEGTORADDIV2);
+	double s2 = sin(m_roll * DEGTORADDIV2);
+	double c3 = cos(m_pitch * DEGTORADDIV2);
+	double s3 = sin(m_pitch * DEGTORADDIV2);
 	double c1c2 = c1*c2;
 	double s1s2 = s1*s2;
 

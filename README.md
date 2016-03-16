@@ -1,6 +1,10 @@
 # TrackerV2-OSVR
 TrackIR tracking plugin for OSVR based on OptiTrack Camera SDK v1.9.0
 
+## Important notice
+
+The current performance is not satisfactory to be recommended for use. There are issues with rotation and position interacting with each other, rotation suddenly snapping to a wrong angle and jitter that would require to add some filtering. The Camera SDK lacks documentation and does not include the source code so it is hard to figure out the cause of these issues and they may never be resolved. It might be a better idea to make a plugin with the TrackIR SDK since the orientations and positions reported in TrackIR software work properly as intended.
+
 ## Instructions for 32 bit version
 
 Copy TrackerV2-OSVR\build_x86\bin\osvr-plugins-0\Release\com_samaust_trackerv2_osvr.dll to osvr-plugins-0 folder.
